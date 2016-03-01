@@ -1,0 +1,782 @@
+/*             */
+/*             */
+/*   Obecné    */
+/*             */
+/*             */
+html{
+	font-family:Arial;
+	margin:0;
+	padding:0;
+	color:black;
+}
+body{
+	margin:0;
+	padding:0;
+	font-size: 15px;
+	line-height: 1.6;
+	color: black;
+	background-color: #151213;
+}
+div{
+	width:auto;
+	margin:0;
+	padding:0;
+}
+table{
+	width:100%;
+	margin:0;
+	padding:0;
+	border:none;
+	border-collapse:collapse;
+}
+table tr, table td{
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+a{
+	font-weight:bold;
+	text-decoration:none;
+	color: #BADDFF;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"]{
+	padding: 1px 5px 2px 5px;
+	border: 1px solid #4e8ecb;
+	margin: 1px 0;
+	background: white;
+	line-height: 1.4em;
+}
+
+.warning_table input[type="text"],
+.warning_table input[type="password"],
+.warning_table input[type="file"]{
+	border: 1px solid #D42A2A;
+}
+
+input[type="submit"],
+input[type="button"]{
+	cursor:pointer;
+	padding: 4px 5px 1px 5px;
+	text-align: left;
+	border: 1px solid #4e8ecb;
+	margin: 1px 0;
+	line-height: 1.4em;	
+}
+
+
+.warning_table input[type="submit"],
+.warning_table input[type="button"]{
+	border: 1px solid #D42A2A;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover{
+	background: white;
+}
+
+input[type="checkbox"]{
+	margin: 0 5px 0 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus{
+	outline:2px #26b6ea solid;
+}
+
+.warning_table input:focus,
+.warning_table select:focus,
+.warning_table textarea:focus,
+.warning_table button:focus{
+	outline:2px #FF4444 solid;
+}
+
+
+
+input[readonly],
+input:disabled,
+select[readonly],
+select:disabled,
+textarea[readonly],
+textarea:disabled{
+	border: 1px solid rgba(100,100,100,0.2)/*75c7e2;;;*/;
+	border-bottom: none;
+	border-top: none;
+	background: #F0FAFF;
+}
+
+input[readonly]:focus,
+select[readonly]:focus,
+textarea[readonly]:focus
+/*a:focus*/{
+	outline:none;
+	border: 1px solid rgba(100,100,100,0.2)/*75c7e2;;;*/;
+	border-bottom: none;
+	border-top: none;
+	background: #F0FAFF;
+}
+
+.hidden{
+	display:none;
+}
+.vlevo{
+	text-align:left;
+}
+.stred{
+	text-align:center;
+}
+.vpravo{
+	text-align:right;
+}
+.center{
+	margin:0 auto;
+}
+.half_page{
+	width:50%;
+}
+.v_align_top{
+	vertical-align:top;
+}
+form.vpravo input{
+	text-align: right;
+}
+.point{
+	cursor:pointer;
+}
+.black{
+	color:black;
+}
+.tucne{
+	font-weight:bold;
+}
+.mj{
+	margin: 0px;
+	font-size: x-small;
+}
+.white{
+	color:black;
+}
+.f_left{
+	float:left;
+}
+.f_right{
+	float:right;
+}
+.alert{
+	color:#a60000;
+}
+.non-select{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.no-resize{
+	resize: none;
+}
+.auto_width{
+	width:auto;
+}
+
+.c_modra_1{
+	color: #006BAF;
+}
+
+.c_modra_2{
+	color: #4e8ecb;
+}
+
+.b_modra_1{
+	background-color: #006BAF;
+}
+
+.b_modra_2{
+	background-color: #4e8ecb;
+}
+
+.c_bila{
+	color:white;
+}
+
+.c_seda_1{
+	color: #231f20;
+}
+
+.c_seda_2{
+	color: #AFAFAF;
+}
+
+.b_seda_1{
+	background-color: #231f20;
+}
+
+.b_seda_2{
+	background-color: #AFAFAF;
+}
+
+.c_cervena_1{
+	color: #D42A2A;
+}
+
+.b_cervena_1{
+	background-color: #D42A2A;
+}
+
+div.flash {
+	color: black;
+	text-align:center;
+	background:#CFE3FA;
+	border: 1px solid rgba(20,20,20,0.3);
+	padding: 1em;
+}
+
+div.flash.inner_flash {
+	margin-bottom:15px;
+}
+
+div.flash.form_flash {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+div.flash.form_flash ul {
+	margin: 0px;
+	text-align: left;
+}
+
+div.flash.error {
+	background:#FFC1C1;
+}
+
+div.flash.success{
+	background:#CEFFC8;
+}
+
+div.flash.warning{
+	background:#FFF9D7;
+}
+
+div.flash.info{
+	background:#CFE3FA;
+}
+
+
+div.flash div.flash_inner{
+
+	margin:0;
+	padding:0;
+}
+
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+table.form_table{
+	margin:0 auto 40px auto;
+}
+
+table.form_table tr{
+	height:30px;
+	border-bottom:1px #99ccff solid;
+}
+
+table.form_table tr td{
+	vertical-align:middle;
+	padding:0 10px;
+}
+
+table.form_table tr td input[type="submit"]{
+	float:right;
+	margin-left:5px;
+}
+
+table.form_table tr td input[type="checkbox"]{
+	position:relative;
+	top:2px;
+}
+
+.form_tbl_title{
+	width: 500px;
+	margin:0 auto;
+	font-weight:normal;
+	font-size:1.1em;
+	padding:0 5px;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+table.form_table.warning_table tr{
+	height:30px;
+	border-bottom:1px #E48888 solid;
+}
+ 
+.warning_tbl_title{
+	width: 500px;
+	margin:0 auto;
+	font-weight:normal;
+	font-size:1.1em;
+	padding:0 5px;
+	border-right:2px #E48888 solid;
+	border-left:2px #E48888 solid;
+}
+/*
+.button_link{
+	display:block;
+	background:#dddddd;
+	border:1px solid #4E8ECB;
+	color:black;
+	font-weight:normal;
+	padding:0 5px;
+	font-size:0.8em;
+	line-height:2em
+}
+*/
+/*                    */
+/*                    */
+/*   Šablona - top    */
+/*                    */
+/*                    */
+#menu{
+	width:1000px;
+	height:182px;
+	margin:40px auto 0 auto;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#menu #logo{
+	width:284px;
+}
+
+#menu #xdc{
+	width:428px;
+	height:182px;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#menu #xdc h1,#menu #xdc h2{
+	color:white;
+	margin:0;
+	line-height:1em;
+	padding:0;
+}
+
+
+#menu #xdc h1{
+	font-size:6em;
+	margin-top:25px;
+	margin-bottom:10px;
+}
+
+#menu #login{
+	width:284px;
+	height:182px;
+}
+
+#menu #login table#login_form_tbl{
+	width:90%;
+	margin:0 auto 30px auto;
+}
+
+#menu #login table#login_form_tbl .alert,
+#menu #login table#login_form_tbl label{
+	color:white;
+}
+
+#menu #login img.ikona{
+	height:40px;
+	position:relative;
+	top:4px;
+}
+
+#menu #login table#user_menu,
+#menu #login table#back_menu{
+	width:90%;
+	margin:15px auto 0 auto;
+	border-top:1px #4e8ecb solid;
+}
+
+#menu #login table#user_menu tr,
+#menu #login table#back_menu tr{
+	height:50px;
+	border-bottom:1px #4e8ecb solid;
+}
+
+#menu #login table#user_menu tr td,
+#menu #login table#back_menu tr td{
+	vertical-align:middle;
+	padding:0 10px;
+}
+
+#menu #login table#back_menu{
+	margin-top:66px;
+}
+
+
+#top_general{
+	width:1000px;
+	min-height:25px;
+	margin:0 auto;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#top_inner{
+	padding:3px 10px;
+}
+
+#top_stavby{
+	width:95%;
+	min-height:30px;
+	margin:0 auto;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+
+#top_stavby .flash{
+	width:50%;
+	margin:0 auto;
+}
+
+
+#top_stavby h4{
+	margin:0;
+}
+
+#line_general{
+}
+
+#menu_general {
+	width:1000px;
+	height:36px;
+	margin:0 auto;
+	border-right:2px #fff solid;
+	border-left:2px #fff solid;
+}
+
+#menu_stavby {
+	width:95%;
+	height:36px;
+	margin:0 auto;
+	border-right:2px #fff solid;
+	border-left:2px #fff solid;
+}
+
+#menu_general img.ikona,
+#menu_stavby img.ikona{
+	height:30px;
+	position:relative;
+	padding-right:5px;
+	top:3px;
+}
+
+#menu_general a,
+#menu_stavby a{
+	display:block;
+	height:36px;
+	padding:0 10px;
+}
+
+#menu_general a:hover,
+#menu_stavby a:hover{
+	background:rgba(255,255,255,0.2);
+}
+
+#menu_general a.f_right,
+#menu_stavby a.f_right{
+	border-left:2px #ccc solid;
+}
+
+#menu_general a.f_left,
+#menu_stavby a.f_left{
+	border-right:2px #ccc solid;
+}
+
+#menu_general a .link_text,
+#menu_stavby a .link_text{
+	position:relative;
+	top:-6px;
+}
+
+#line_1{
+	height:3px;
+	width:1100px;
+	margin:0 auto;
+	border-top:2px #006BAF solid;
+	position:relative;
+	left:20px;
+}
+
+#line_2{
+	height:3px;
+	width:1100px;
+	margin:0 auto;
+	border-bottom:2px #AFAFAF solid;
+	position:relative;
+	left:-20px;
+}
+
+/*                    */
+/*                    */
+/*   Šablona - obsah  */
+/*                    */
+/*                    */
+
+.page_title{
+	margin:0;
+	position:relative;
+	top:-32px;
+	line-height:0;
+}
+
+.stavby_tbl_title{
+	height:30px;
+	margin:0;
+	margin-bottom:-30px;
+	position:relative;
+	z-index:100;
+	top:8px;
+	left:15px;
+}
+
+.detail_table .col-1{
+	width:110px;
+}
+
+.detail_table input{
+	width:550px;
+}
+
+
+.detail_table textarea{
+	width:545px;
+	margin:5px 0 0 0;
+	padding:5px;
+}
+
+.detail_table .col-3{
+	width:10px;
+}
+
+.fg-toolbar.ui-toolbar {
+	height:35px;
+}
+
+
+.display.dataTable  td[title="Upravit kliknutím..."]{
+	color:green;
+}
+
+.display.dataTable .price-zero td[title="Upravit kliknutím..."]{
+	color:red;
+}
+
+td.sorting_1,
+td.sorting_2,
+td.sorting_3{
+	background-color:rgba(128,128,128,0.1) !important;
+}
+
+.stavby_tool{
+	height:35px;
+	cursor:pointer;
+	margin-right:5px;
+}
+
+.stavby_tool:hover{
+	opacity:0.8;
+}
+
+.popis_ikona{
+	position:relative;
+	top:4px;
+	left:-2px;
+}
+
+#error_msg{
+	font-size:2.0em;
+	background:white;
+	width:90%;
+	padding:15px;
+	margin-top:10px;
+}
+
+#error_msg h2{
+	padding: 0 10px;
+	margin-top:0;
+}
+
+#content_general{
+	width:1000px;
+	min-height:200px;
+	margin:0 auto;
+	background-color: white;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#content_stavby{
+	width:95%;
+	min-height:200px;
+	margin:0 auto;
+	background-color: white;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#content_inner{
+	padding:15px;
+}
+
+table#reg_form_tbl,
+table#forgot_form_tbl,
+table#change_pass_form_tbl,
+table#delete_acc_form_tbl,
+table#import_upload_form_tbl,
+table#import_form_tbl,
+table#validace_form_tbl{
+	width:485px;
+}
+
+table#reg_form_tbl tr td input[type="text"],
+table#reg_form_tbl tr td input[type="password"]{
+	width:340px;
+}
+
+table#forgot_form_tbl tr td input[type="text"],
+table#import_upload_form_tbl tr td input[type="file"],
+table#validace_form_tbl tr td input[type="file"]{
+	width:380px;
+}
+
+table#change_pass_form_tbl tr td input[type="text"],
+table#change_pass_form_tbl tr td input[type="password"],
+table#delete_acc_form_tbl tr td input[type="password"]{
+	width:310px;
+}
+
+#change_pass_form_tbl_title,
+#delete_acc_form_tbl_title,
+#validace_form_tbl_title,
+#reg_form_tbl_title,
+#forgot_form_tbl_title{
+	width:500px;
+}
+
+
+
+#strom{
+	width: 250px;
+	height: 524px;	
+	font-size:0.8em;
+	overflow:auto;
+	margin: 0px 0px 0px 0px;
+	text-overflow:clip;
+}
+
+#strom-td-strom{
+	width: 250px;
+	border: 1px solid #4e8ecb;
+}
+
+#strom-td-toggle{
+	/*width: 20px !important;*/
+	text-align: center;
+	padding:0 5px;
+	border: 1px solid #4e8ecb;
+	border-right: 1px solid #4e8ecb;
+	border-left: 1px solid #4e8ecb;
+}
+
+#strom-td-polozky{
+	border: 1px solid #4e8ecb;
+}
+
+#stavba_rekapitulace h4{
+	margin:0 15px -24px 0;
+	position:relative;
+	top:-50px;
+	height:24px;
+}
+
+#stavba_rekapitulace h4.celkem{
+	top:-26px;
+}
+
+#sign-in-container{
+	padding-top: 30px;
+}
+
+#ajax-spinner {
+ /*visibility: hidden;*/
+ position: absolute;
+ top:0;
+ left:0;
+ width: 100%;
+ height: 100%;
+ background: rgba(107, 175, 255, 0.4) url('../images/spinner.gif') no-repeat 50% 50%;
+ z-index: 123456;
+}
+
+/*                    */
+/*                    */
+/*   Šablona - bott   */
+/*                    */
+/*                    */
+
+#copy{
+	height:22px;
+	width:1000px;
+	margin:0 auto;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#copy_stavby{
+	height:22px;
+	width:95%;
+	margin:0 auto;
+	border-right:2px #4e8ecb solid;
+	border-left:2px #4e8ecb solid;
+}
+
+#copy p,
+#copy_stavby p{
+	margin:0;
+	line-height:1.5em;
+	padding:0 10px;
+}
+
