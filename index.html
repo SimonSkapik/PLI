@@ -19,8 +19,10 @@
 
 <body>
 <!--<input type="text" id="url" name="url" value="http://zpravy.idnes.cz/domaci.aspx" />-->
-<input type="text" id="url" name="url" value="http://zpravy.idnes.cz/lekarska-komora-kvalita-pece-dgv-/domaci.aspx?c=A160307_091505_domaci_hro" />
-<input type="button" id="load" name="load" onclick="Load_EVERY_FUCKIN_THING('http://zpravy.idnes.cz/domaci.aspx?strana=',1,2);" value="Load" />
+<label>Base: </label><input type="text" id="base" name="base" value="http://zpravy.idnes.cz/domaci.aspx?strana=" /><br>
+<label>From: </label><input type="text" id="start" name="start" value="1" /><br>
+<label>To: </label><input type="text" id="stop" name="stop" value="2" /><br>
+<input type="button" id="load" name="load" onclick="Load_EVERY_FUCKIN_THING($('#base').val(),parseInt($('#start').val()),parseInt($('#stop').val()));" value="Load" />
 <div id="result"></div>
 </body>
 </html>
