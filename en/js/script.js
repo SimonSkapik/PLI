@@ -73,7 +73,7 @@ function Load_content(link){
 		type: 'GET',
 		success: function(res) {
 			Parse_content(
-				$(res.responseText).find('meta[itemprop="datePublished"]'),
+				$(res.responseText).find('.date-posted'),
 				$(res.responseText).find('.author-bio span[itemprop="name"]'),
 				$(res.responseText).find('.page-title'),
 				$(res.responseText).find('.entry-content > p')
@@ -84,7 +84,7 @@ function Load_content(link){
 
 function Parse_content(datum, author, title, text){
 	data = "\n"+'&lt;article&gt;'+"\n";
-	data += '&nbsp;&nbsp;&lt;date&gt;' + $(datum).attr('content') + '&lt;&#x2F;date&gt;'+"\n";
+	data += '&nbsp;&nbsp;&lt;date&gt;' + $(datum).text() + '&lt;&#x2F;date&gt;'+"\n";
 	data += '&nbsp;&nbsp;&lt;authors&gt;'+"\n";
 	$.each(author, function(a,b){
 		data += '&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;'+$(b).text()+'&lt;&#x2F;author&gt;'+"\n";
