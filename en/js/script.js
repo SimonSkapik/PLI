@@ -73,7 +73,7 @@ function Load_content(link){
 		type: 'GET',
 		success: function(res) {
 			Parse_content(
-				$(res.responseText).find('.date-posted'),
+				$(res.responseText).find('meta[itemprop="datePublished"]'),
 				$(res.responseText).find('.author-bio span[itemprop="name"]'),
 				$(res.responseText).find('.page-title'),
 				$(res.responseText).find('.entry-content > p')
