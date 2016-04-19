@@ -31,7 +31,7 @@ function Load_links(url){
 		url: url,
 		type: 'GET',
 		success: function(res) {
-			Parse_links($(res.responseText).find('div#entries div.categoryItems-content > h2.et_pt_title > a'));
+			Parse_links($(res.responseText).find('article header h2 a'));
 		}
 	});
 }
@@ -73,10 +73,10 @@ function Load_content(link){
 		type: 'GET',
 		success: function(res) {
 			Parse_content(
-				$(res.responseText).find('div.meta-info'),
-				$(res.responseText).find('.et_pt_blogmeta a'),
-				$(res.responseText).find('.entry.post.clearfix h1.title'),
-				$(res.responseText).find('.entry.post.clearfix > p:not(.et_pt_blogmeta)')
+				$(res.responseText).find('.date-posted'),
+				$(res.responseText).find('.author-bio span[itemprop="name"]'),
+				$(res.responseText).find('.page-title'),
+				$(res.responseText).find('.entry-content > p')
 			);
 		}
 	});
@@ -84,8 +84,7 @@ function Load_content(link){
 
 function Parse_content(datum, author, title, text){
 	data = "\n"+'&lt;article&gt;'+"\n";
-	date_txt = $(datum).text().split("|");
-	data += '&nbsp;&nbsp;&lt;date&gt;' + date_txt[0] + '&lt;&#x2F;date&gt;'+"\n";
+	data += '&nbsp;&nbsp;&lt;date&gt;' + $(datum).text() + '&lt;&#x2F;date&gt;'+"\n";
 	data += '&nbsp;&nbsp;&lt;authors&gt;'+"\n";
 	$.each(author, function(a,b){
 		data += '&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;'+$(b).text()+'&lt;&#x2F;author&gt;'+"\n";

@@ -37,7 +37,7 @@ if(isset($_POST['result'])){
 
 <body>
 <!--<input type="text" id="url" name="url" value="http://zpravy.idnes.cz/domaci.aspx" />-->
-<label>Base: </label><input type="text" id="base" name="base" value="http://www.uni-europa.org/news/page/" /><br>
+<label>Base: </label><input type="text" id="base" name="base" value="http://www.clearadmit.com/category/news/page/" /><br> <!-- http://www.uni-europa.org/news/page/ -->
 <label>From: </label><input type="text" id="start" name="start" value="2" /><br>
 <label>To: </label><input type="text" id="stop" name="stop" value="20" /><br>
 <input type="button" id="load" name="load" onclick="Load_EVERY_FUCKIN_THING($('#base').val(),parseInt($('#start').val()),parseInt($('#stop').val()));" value="Load" />
