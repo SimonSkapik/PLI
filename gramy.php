@@ -82,13 +82,44 @@ for( $i = 0; $i <= $strlen; $i++ ) {
 			$unigrams[$char] = 1;
 	}
 }
+// vyhlazeni
+$uni = get_full_clean_array(2);
+
+foreach($unigrams as $key => $value) {
+	if($key != '0'){
+		$uni[$key] = $value;
+	}
+}
+
+$n = 0;
+$t = 0;
+$z = 0;
+for($j = 'a'; $j != 'aa'; $j++){
+	$n += $uni[$j];
+	if($uni[$j] != 0){
+		$t++;
+	}else{
+		$z++;
+	}
+}
+for($j = 'a'; $j != 'aa'; $j++){
+	if($n == 0){
+		$uni[$j] = 1/26;
+	}else{
+		if($uni[$j] == 0){
+			$uni[$j] = $t / ($z * ($n + $t));
+		}else{
+			$uni[$j] = $uni[$j] / ($n + $t);
+		}
+	}
+}
 
 $file_name = "czech_char_unigramy.txt";
 $file_uni = fopen($file_name, 'w') or die("can't open file");
 
-foreach($unigrams as $key => $value) {
+foreach($uni as $key => $value) {
 	if($key != '0'){
-		$text = $key." ".($value/$letters)."\n";
+		$text = $key." ".($value)."\n";
 		fwrite($file_uni, $text);
 	}
 }
@@ -111,14 +142,53 @@ for( $i = 0; $i <= $strlen; $i++ ) {
 	$char1 = $char2;
 }
 
-$file_name = "czech_char_bigramy.txt";
-$file_uni = fopen($file_name, 'w') or die("can't open file");
+// vyhlazeni
+$bi = get_full_clean_array(2);
 
 foreach($bigrams as $key1 => $value1) {
 	if($key1 != '0'){
 		foreach($value1 as $key2 => $value2) {
 			if($key2 != '0'){
-				$text = $key1.';'.$key2." ".($value2/$pairs)."\n";
+				$bi[$key1][$key2] = $value2;
+			}
+		}
+	}
+}
+
+for($i = 'a'; $i != 'aa'; $i++){
+	$n = 0;
+	$t = 0;
+	$z = 0;
+	for($j = 'a'; $j != 'aa'; $j++){
+		$n += $bi[$i][$j];
+		if($bi[$i][$j] != 0){
+			$t++;
+		}else{
+			$z++;
+		}
+	}
+	for($j = 'a'; $j != 'aa'; $j++){		
+		if($n == 0){
+			$bi[$i][$j] = 1/26;
+		}else{
+			if($bi[$i][$j] == 0){
+				$bi[$i][$j] = $t / ($z * ($n + $t));
+			}else{
+				$bi[$i][$j] = $bi[$i][$j] / ($n + $t);
+			}
+		}
+	}
+}
+
+// ulozeni do souboru
+$file_name = "czech_char_bigramy.txt";
+$file_uni = fopen($file_name, 'w') or die("can't open file");
+
+foreach($bi as $key1 => $value1) {
+	if($key1 != '0'){
+		foreach($value1 as $key2 => $value2) {
+			if($key2 != '0'){
+				$text = $key1.';'.$key2." ".($value2)."\n";
 				fwrite($file_uni, $text);
 			}
 		}
@@ -145,8 +215,9 @@ for( $i = 0; $i <= $strlen; $i++ ) {
 	$char2 = $char3;
 }
 
-$file_name = "czech_char_trigramy.txt";
-$file_uni = fopen($file_name, 'w') or die("can't open file");
+
+// vyhlazeni
+$tri = get_full_clean_array(3);
 
 foreach($trigrams as $key1 => $value1) {
 	if($key1 != '0'){
@@ -154,7 +225,53 @@ foreach($trigrams as $key1 => $value1) {
 			if($key2 != '0'){
 				foreach($value2 as $key3 => $value3) {
 					if($key3 != '0'){
-						$text = $key1.';'.$key2.';'.$key3." ".($value3/$triples)."\n";
+						$tri[$key1][$key2][$key3] = $value3;
+					}
+				}
+			}
+		}
+	}
+}
+
+for($i = 'a'; $i != 'aa'; $i++){
+	for($k = 'a'; $k != 'aa'; $k++){
+		$n = 0;
+		$t = 0;
+		$z = 0;
+		for($j = 'a'; $j != 'aa'; $j++){
+			$n += $tri[$i][$k][$j];
+			if($tri[$i][$k][$j] != 0){
+				$t++;
+			}else{
+				$z++;
+			}
+		}
+		//echo "/// n z t : ".$n." ".$z." ".$t." ///";
+		for($j = 'a'; $j != 'aa'; $j++){
+			if($n == 0){
+				$tri[$i][$k][$j] = 1/26;
+			}else{
+				if($tri[$i][$k][$j] == 0){
+					$tri[$i][$k][$j] = $t / ($z * ($n + $t));
+				}else{
+					$tri[$i][$k][$j] = $tri[$i][$k][$j] / ($n + $t);
+				}
+			}
+		}
+	}
+}
+
+
+$file_name = "czech_char_trigramy.txt";
+$file_uni = fopen($file_name, 'w') or die("can't open file");
+
+foreach($tri as $key1 => $value1) {
+	if($key1 != '0'){
+		foreach($value1 as $key2 => $value2) {
+			if($key2 != '0'){
+				foreach($value2 as $key3 => $value3) {
+					if($key3 != '0'){
+						$text = $key1.';'.$key2.';'.$key3." ".($value3)."\n";
 						fwrite($file_uni, $text);
 					}
 				}
