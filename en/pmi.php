@@ -6,7 +6,7 @@ $bi = array();
 $words = array();
 $n = 0;
 
-$file = fopen("czech_unigramy.txt", "r") or exit("Unable to open file!");
+$file = fopen("english_unigramy.txt", "r") or exit("Unable to open file!");
 while(!feof($file)) {
 	$f = fgets($file);
 	if($f != '') {
@@ -17,7 +17,7 @@ while(!feof($file)) {
   }
 fclose($file);
 
-$file = fopen("czech_bigramy.txt", "r") or exit("Unable to open file!");
+$file = fopen("english_bigramy.txt", "r") or exit("Unable to open file!");
 while(!feof($file)) {
 	$f = fgets($file);
 	if($f != '') {
