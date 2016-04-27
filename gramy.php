@@ -98,7 +98,6 @@ echo "znakove unigramy safe and sound".PHP_EOL;
 
 //znakove bigramy
 $bigrams = get_full_clean_array(2);
-$filecontent = file_get_contents('czech_data.txt');
 
 $strlen = strlen( $filecontent );
 $pairs = 0;
@@ -131,7 +130,6 @@ echo "znakove bigramy safe and sound".PHP_EOL;
 
 //znakove trigramy
 $trigrams = get_full_clean_array(3);
-$filecontent = file_get_contents('czech_data.txt');
 
 $strlen = strlen( $filecontent );
 $triples = 0;
