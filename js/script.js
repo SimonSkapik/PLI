@@ -113,5 +113,16 @@ function add_article(data){
 }
 
 function clean_up(dirty_text){
-	return dirty_text.toLowerCase().replace(/á/g,'a').replace(/č/g,'c').replace(/ď/g,'d').replace(/é/g,'e').replace(/ě/g,'e').replace(/í/g,'i').replace(/ň/g,'n').replace(/ó/g,'o').replace(/ř/g,'r').replace(/š/g,'s').replace(/ť/g,'t').replace(/ú/g,'u').replace(/ů/g,'u').replace(/ý/g,'y').replace(/ž/g,'z').replace(/ś/g,'s').replace(/ć/g,'c').replace(/ĺ/g,'l').replace(/ń/g,'n').replace(/ŕ/g,'r').replace(/ź/g,'z').replace(/ä/g,'a').replace(/ë/g,'e').replace(/ï/g,'i').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ÿ/g,'y').replace(/[^a-z ]/g,' ');   // .replace(/[„“",\.\[\]0-9,\?\!\;\:_'\\\/°@#%\+\|\*\:\(\)\[\]\{\}]*/g,'');
+	return dirty_text.toLowerCase().replace(/á/g,'a').replace(/č/g,'c').replace(/ď/g,'d').replace(/é/g,'e').replace(/ě/g,'e').replace(/í/g,'i').replace(/ň/g,'n').replace(/ó/g,'o').replace(/ř/g,'r').replace(/š/g,'s').replace(/ť/g,'t').replace(/ú/g,'u').replace(/ů/g,'u').replace(/ý/g,'y').replace(/ž/g,'z').replace(/ś/g,'s').replace(/ć/g,'c').replace(/ĺ/g,'l').replace(/ń/g,'n').replace(/ŕ/g,'r').replace(/ź/g,'z').replace(/ä/g,'a').replace(/ë/g,'e').replace(/ï/g,'i').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ÿ/g,'y').replace(/ł/g,'l').replace(/[^a-z ]/g,' ');   // .replace(/[„“",\.\[\]0-9,\?\!\;\:_'\\\/°@#%\+\|\*\:\(\)\[\]\{\}]*/g,'');
+}
+
+function classify(){
+	$.ajax({
+	  type: "POST",
+	  url: './classify.php',
+	  data: {txt:clean_up($('#classify_text').val())},
+	  success: function(res){alert(res);},
+	  fail: function(){alert( "error" );},
+	  dataType: 'text'
+	});
 }

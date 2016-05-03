@@ -1,5 +1,6 @@
 <?php
 ini_set('memory_limit','512M');
+ini_set('max_execution_time', 300);
 
 function get_full_clean_array($dim){
 	$arr = array('a'=>0,
@@ -68,7 +69,7 @@ echo "slovni unigramy safe and sound";
 */
 
 //znakove unigramy
-$filecontent = file_get_contents('czech_data.txt');
+$filecontent = file_get_contents('./data/sk_cleared.txt');
 
 $strlen = strlen( $filecontent );
 $letters = 0;
@@ -114,7 +115,7 @@ for($j = 'a'; $j != 'aa'; $j++){
 	}
 }
 
-$file_name = "czech_char_unigramy.txt";
+$file_name = "sk_char_unigramy.txt";
 $file_uni = fopen($file_name, 'w') or die("can't open file");
 
 foreach($uni as $key => $value) {
@@ -181,7 +182,7 @@ for($i = 'a'; $i != 'aa'; $i++){
 }
 
 // ulozeni do souboru
-$file_name = "czech_char_bigramy.txt";
+$file_name = "sk_char_bigramy.txt";
 $file_uni = fopen($file_name, 'w') or die("can't open file");
 
 foreach($bi as $key1 => $value1) {
@@ -262,7 +263,7 @@ for($i = 'a'; $i != 'aa'; $i++){
 }
 
 
-$file_name = "czech_char_trigramy.txt";
+$file_name = "sk_char_trigramy.txt";
 $file_uni = fopen($file_name, 'w') or die("can't open file");
 
 foreach($tri as $key1 => $value1) {

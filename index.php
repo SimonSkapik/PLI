@@ -41,7 +41,7 @@ if(isset($_POST['result'])){
 <label>From: </label><input type="text" id="start" name="start" value="1" /><br>
 <label>To: </label><input type="text" id="stop" name="stop" value="2" /><br>
 <input type="button" id="load" name="load" onclick="Load_EVERY_FUCKIN_THING($('#base').val(),parseInt($('#start').val()),parseInt($('#stop').val()));" value="Load" />
-<input type="button" id="clean" name="clean" onclick="clean_up();" value="Clean" />
+<input type="button" id="clean" name="clean" onclick="clean_text();" value="Clean" />
 <form method="post" action="./">
 	<textarea name="result" id="result"></textarea>
 	<textarea name="result_text" id="result_text"></textarea>
